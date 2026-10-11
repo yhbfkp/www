@@ -1,0 +1,29 @@
+# Keil MDK build outputs
+*.o
+*.d
+*.crf
+*.lst
+*.htm
+*.dep
+*.iex
+*.lnp
+*.axf
+*.hex
+*.bin
+*.elf
+*.lnt
+*.scvd
+Listings/
+Objects/
+RTE/
+DebugConfig/
+*.uvguix.*
+*.uvgui.*
+*.bak
+build_*.log
+JLink*
+*.ini
+
+# Windows
+Thumbs.db
+desktop.ini
