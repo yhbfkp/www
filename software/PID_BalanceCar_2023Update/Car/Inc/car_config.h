@@ -29,7 +29,7 @@
 #define CAR_USE_MOTOR       1       //0=完全不输出PWM(调试安全)
 #define CAR_USE_ENCODER     1
 #define CAR_USE_GRAY        1       //芯流 T8 八路灰度 (硬件I2C2 PB10/PB11)
-#define CAR_USE_MPU         1      //MPU6050 (软I2C PA6/PA7) —— 纯轮询 burst 读, 不依赖 INT 脚, 不用插 INT
+#define CAR_USE_MPU         0      //MPU6050 (软I2C PA6/PA7) —— 纯轮询 burst 读, 不依赖 INT 脚, 不用插 INT
 #define CAR_USE_ULTRA       1       //超声波: 板上座子没走线, 必须飞线 PB0/PB1 才能开
 #define CAR_USE_OLED        0    //屏点亮后改回1; 屏不亮时刷屏只会拖停灰度采样(循迹甩尾)       //打开: 跑 OLED 硬件自检(白闪/扫描/引脚自检); 屏幕问题处理完可再关
 #define CAR_USE_KEY         1
@@ -83,11 +83,11 @@
 #define W7 4.2
 #define W8 6
 
-#define TRACK_KP            8.0f    //[可调] 转向P (误差量级 0~12)
+#define TRACK_KP            7.5f    //[可调] 转向P (误差量级 0~12)
 #define TRACK_ERR_SLEW      1.0f    //[防跳变] error 每帧(10ms)最大变化量, 抑制灰度量化跳变
 #define TRACK_OUT_SLEW      5
 #define TRACK_START_HOLD   80      //[可调] 起步直行帧数(10ms/帧), 80=800ms, 跨过启停线混乱期       //[防跳变] L/R 目标轮速每帧(10ms)最大变化量, 阶跃变斜坡
-#define TRACK_KD            7.0f    //[可调] 转向D
+#define TRACK_KD            5.0f    //[可调] 转向D
 #define STEER_MAX           60      //转向输出上限(最大差速≈这个值×2)
 
 /* ======================= 速度环 PID (增量式, car-main 队友实测值) ========== */
